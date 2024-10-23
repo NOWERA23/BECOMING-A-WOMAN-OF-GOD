@@ -1,0 +1,71 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distributes header and footer */
+  align-items: center; /* Center aligns content */
+  color: white; /* Text color for better visibility */
+  text-align: center; /* Center aligns text */
+  height: 100vh; /* Full height of the viewport */
+  position: relative; /* Needed for positioning the image */
+}
+
+.app-header {
+  padding: 20px; /* Adds some padding */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  width: 100%; /* Full width */
+  display: flex; /* Use flexbox for header layout */
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center align items */
+}
+
+.header-title {
+  font-size: 36px; /* Big font size */
+  font-weight: bold; /* Make the text bold */
+  margin-bottom: 20px; /* Space between title and images */
+}
+
+.header-table {
+  display: grid; /* Use grid for table layout */
+  grid-template-columns: repeat(6, 1fr); /* 6 equal columns */
+  gap: 10px; /* Space between images */
+  width: 100%; /* Full width */
+}
+
+.header-cell {
+  display: flex; /* Center align images within cells */
+  justify-content: center; /* Center align images */
+  align-items: center; /* Center vertically */
+}
+
+.header-image {
+  width: 150px; /* Set a fixed width for images */
+  height: 150px; /* Maintain aspect ratio */
+}
+
+.app-footer {
+  padding: 10px; /* Adds some padding */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  width: 100%; /* Full width */
+}
+
+.app-image {
+  width: 100%; /* Makes the image fit the width of the container */
+  height: auto; /* Keeps the aspect ratio */
+  max-height: calc(500vh - 5000px); /* Adjust based on header/footer height */
+  object-fit: cover; /* Covers the space without stretching */
+  position: absolute; /* Allows it to be positioned behind the text */
+  top: 60px; /* Adjust based on header height */
+  left: 0;
+  z-index: -1; /* Sends image to the back */
+}
+
+
+.header-image {
+  width: 100px; /* Adjust size as needed */
+  height: auto; /* Maintain aspect ratio */
+  transition: transform 0.5s ease; /* Smooth transition */
+}
+
+.header-image.rotate:hover {
+  transform: rotate(360deg); /* Rotate on hover */
+}
